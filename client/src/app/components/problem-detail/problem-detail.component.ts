@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { Problem } from "../../models/problem.model";
-import { ActivatedRoute, Params } from "@angular/router";
-import { inject } from "@angular/core/testing";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-problem-detail",

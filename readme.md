@@ -14,7 +14,9 @@ npm install
 npm start
 ```
 
-### Server - Terminal B
+client will be serving on http://localhost:4200
+
+### Web Server - Terminal B
 
 #### 1. install dependencies
 
@@ -27,3 +29,5 @@ npm install
 ```
 npm start
 ```
+
+Web Server will be serving on http://localhost:3000
