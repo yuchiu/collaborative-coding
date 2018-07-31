@@ -8,13 +8,15 @@ import { AppComponent } from "./app.component";
 import { ProblemListComponent } from "./components/problem-list/problem-list.component";
 import { ProblemDetailComponent } from "./components/problem-detail/problem-detail.component";
 import { AddProblemComponent } from "./components/add-problem/add-problem.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProblemListComponent,
     ProblemDetailComponent,
-    AddProblemComponent
+    AddProblemComponent,
+    NavbarComponent
   ],
   imports: [BrowserModule, routing, FormsModule],
   providers: [{ provide: "data", useClass: DataService }],
