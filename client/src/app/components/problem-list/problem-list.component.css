@@ -1,0 +1,23 @@
+.prob-list {
+  text-align: left;
+}
+
+.difficulty {
+  min-width: 65px;
+}
+
+.title {
+  font-size: 1.2em;
+}
+
+.diff-easy {
+  background-color: #42ebf4;
+}
+
+.diff-medium {
+  background-color: #e2f442;
+}
+
+.diff-hard {
+  background-color: #f45d42;
+}
