@@ -47,7 +47,7 @@ const problemService = {
         if (foundProblem) {
           reject(err);
         } else {
-          ProblemModel.count({}, (error, num) => {
+          ProblemModel.countDocuments({}, (error, num) => {
             if (error) {
               reject(err);
             } else {

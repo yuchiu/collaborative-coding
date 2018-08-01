@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { routing } from "./app.routes";
 import { DataService } from "./services/data.service";
@@ -8,7 +9,7 @@ import { AppComponent } from "./app.component";
 import { ProblemListComponent } from "./components/problem-list/problem-list.component";
 import { ProblemDetailComponent } from "./components/problem-detail/problem-detail.component";
 import { AddProblemComponent } from "./components/add-problem/add-problem.component";
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AddProblemComponent,
     NavbarComponent
   ],
-  imports: [BrowserModule, routing, FormsModule],
+  imports: [BrowserModule, routing, FormsModule, HttpClientModule],
   providers: [{ provide: "data", useClass: DataService }],
   bootstrap: [AppComponent]
 })
