@@ -30,4 +30,4 @@ npm install
 npm start
 ```
 
-Web Server will be serving on http://localhost:3000
+Web Server will be serving on http://localhost:3200
