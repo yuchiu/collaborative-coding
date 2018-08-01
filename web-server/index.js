@@ -1,5 +1,11 @@
 import express from "express";
+import mongoose from "mongoose";
+
 import { restRouter } from "./routes";
+
+mongoose.connect(
+  "mongodb://user01:user01@ds149069.mlab.com:49069/collaborative-coding"
+);
 
 const app = express();
 

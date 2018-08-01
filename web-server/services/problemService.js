@@ -1,42 +1,65 @@
-const problems = [
-  {
-    id: 1,
-    name: "fortnite",
-    desc: "aloha guys",
-    difficulty: "easy"
-  },
-  {
-    id: 2,
-    name: "new problem2",
-    desc: "aloha alohaalohaaloha",
-    difficulty: "medium"
-  },
-  {
-    id: 3,
-    name: "new problem3",
-    desc: "aloha guysguysguys",
-    difficulty: "hard"
-  }
-];
+import { ProblemModel } from "../models";
+
+// const problems = [
+//   {
+//     id: 1,
+//     name: "fortnite",
+//     desc: "aloha guys",
+//     difficulty: "easy"
+//   },
+//   {
+//     id: 2,
+//     name: "new problem2",
+//     desc: "aloha alohaalohaaloha",
+//     difficulty: "medium"
+//   },
+//   {
+//     id: 3,
+//     name: "new problem3",
+//     desc: "aloha guysguysguys",
+//     difficulty: "hard"
+//   }
+// ];
 const problemService = {
   getProblems: () =>
     new Promise((resolve, reject) => {
-      resolve(problems);
+      ProblemModel.find({}, (err, problems) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(problems);
+        }
+      });
     }),
   getProblem: id =>
     new Promise((resolve, reject) => {
-      resolve(problems.find(problem => problem.id === id));
+      ProblemModel.findOne({ id }, (err, problem) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(problem);
+        }
+      });
     }),
-  addProblem: createdProblem =>
+  addProblem: problem =>
     new Promise((resolve, reject) => {
-      const newProblem = createdProblem;
-      if (problems.find(problem => problem.name === newProblem.name)) {
-        reject("Problem name already exist");
-      } else {
-        newProblem.id = problems.length + 1;
-        problems.push(newProblem);
-        resolve(newProblem);
-      }
+      ProblemModel.findOne({ name: problem.name }, (err, foundProblem) => {
+        if (foundProblem) {
+          reject(err);
+        } else {
+          ProblemModel.count({}, (error, num) => {
+            if (error) {
+              reject(err);
+            } else {
+              const newProblem = problem;
+              newProblem.id = num + 1;
+              const verifiedProblem = new ProblemModel(newProblem);
+              verifiedProblem.save();
+              resolve(verifiedProblem);
+            }
+          });
+        }
+      });
     })
 };
 export default problemService;
