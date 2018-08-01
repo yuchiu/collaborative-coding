@@ -14,7 +14,7 @@ npm install
 npm start
 ```
 
-client will be serving on http://localhost:4200
+a public dir with static files will be distributed and updates for changes. This public dir will be used by the server.
 
 ### Web Server - Terminal B
 
