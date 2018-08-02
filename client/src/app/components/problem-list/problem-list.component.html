@@ -2,7 +2,7 @@
   <app-add-problem></app-add-problem>
   <div class="list-group prob-list">
     <a class="list-group-item" *ngFor="let problem of problems" [routerLink]="['/problems', problem.id]">
-      <span class="{{'label diff-' + problem.difficulty.toLocaleLowerCase()}}">{{problem.difficulty}} </span>
+      <span class="{{'float-left badge difficulty diff-' + problem.difficulty.toLocaleLowerCase()}}">{{problem.difficulty}} </span>
       <strong class="title">{{problem.id}}. {{problem.name}} </strong>
       <br/>
     </a>

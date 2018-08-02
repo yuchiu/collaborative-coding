@@ -22,4 +22,7 @@ export class ProblemListComponent implements OnInit {
       .getProblems()
       .subscribe(problems => (this.problems = problems));
   }
+  ngOnDestroy() {
+    this.subscriptionProblems.unsubscribe();
+  }
 }

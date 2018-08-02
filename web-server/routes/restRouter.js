@@ -1,7 +1,3 @@
-// get problems
-// post problem
-// get problem by id
-
 import express from "express";
 import bodyParser from "body-parser";
 
@@ -26,7 +22,7 @@ router.post("/problems", jsonParser, (req, res) => {
       res.json(problem);
     },
     err => {
-      res.status(400).send("problem name already exists");
+      res.status(400).send(err);
     }
   );
 });

@@ -1,9 +1,12 @@
-.prob-list {
-  text-align: left;
-}
-
 .difficulty {
   min-width: 65px;
+  margin-right: 10px;
+}
+
+.badge.difficulty {
+  padding-top: 0.6em;
+  color: #fbfdfa;
+  font-size: 12px;
 }
 
 .title {
@@ -15,9 +18,13 @@
 }
 
 .diff-medium {
-  background-color: #e2f442;
+  background-color: #92cf5c;
 }
 
 .diff-hard {
-  background-color: #f45d42;
+  background-color: #dd0d1e;
+}
+
+.diff-super {
+  background-color: #8d16e2;
 }
