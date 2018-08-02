@@ -8,12 +8,13 @@ import { BehaviorSubject, Observable } from "rxjs";
 })
 export class DataService {
   private _problemSource = new BehaviorSubject<Problem[]>([]);
+  private localhost = "http://localhost:3200";
 
   constructor(private httpClient: HttpClient) {}
 
   getProblems(): Observable<Problem[]> {
     this.httpClient
-      .get("api/v1/problems")
+      .get(`${this.localhost}/api/v1/problems`)
       .toPromise()
       .then((res: any) => {
         this._problemSource.next(res);
@@ -23,7 +24,7 @@ export class DataService {
   }
   getProblem(id: number): Promise<Problem> {
     return this.httpClient
-      .get(`api/v1/problem/${id}`)
+      .get(`${this.localhost}/api/v1/problem/${id}`)
       .toPromise()
       .then((res: any) => res)
       .catch(this.handleError);
@@ -36,7 +37,7 @@ export class DataService {
     };
 
     return this.httpClient
-      .post("api/v1/problems", problem, httpOptions)
+      .post(`${this.localhost}/api/v1/problems`, problem, httpOptions)
       .toPromise()
       .then(res => {
         this.getProblems();

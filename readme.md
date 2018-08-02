@@ -1,33 +1,23 @@
 ## Usage
 
-### Client - Terminal A
+### Web Server - Terminal A
 
-#### 1. install dependencies
-
-```
-npm install
-```
-
-#### 2. start application
-
-```
-npm start
-```
-
-a public dir with static files will be distributed and updates for changes. This public dir will be used by the server.
-
-### Web Server - Terminal B
-
-#### 1. install dependencies
+#### 1. install dependencies & start application
 
 ```
 npm install
-```
-
-#### 2. start application
-
-```
 npm start
 ```
 
-Web Server will be serving on http://localhost:3200
+Application will be running on http://localhost:3200
+
+### Web Client - Terminal B
+
+#### 1. install dependencies & start application
+
+```
+npm install
+npm start
+```
+
+Application will be running on http://localhost:4200
